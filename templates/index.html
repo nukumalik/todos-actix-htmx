@@ -1,0 +1,24 @@
+{% extends "layouts/base.html" %}
+
+<!-- Start Block Body -->
+{% block body %}
+
+<!-- Todo Form -->
+{% include "partials/todo_form.html" %}
+
+<div>
+  <small id="Message" class="text-danger">{{message}}</small>
+</div>
+
+<ul id="TodoList" class="list-group list-group-flush w-100">
+  <!-- Start Looping Todos -->
+  {% for todo in todos %}
+
+  <!-- Todo Item -->
+  {% include "partials/todo_item.html" %}
+
+  <!-- End Looping Todos -->
+  {% endfor %}
+</ul>
+
+{% endblock body %}

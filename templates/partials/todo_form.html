@@ -1,0 +1,18 @@
+{% block todo_form %}
+<form
+  id="TodoForm"
+  class="input-group mb-3"
+  hx-post="/api/v1/todos"
+  hx-target="#TodoList"
+  hx-on::after-request="document.getElementById('TodoForm').reset()"
+>
+  <input
+    id="Title"
+    name="title"
+    type="text"
+    class="form-control"
+    placeholder="Please fill the title"
+  />
+  <button class="btn btn-outline-secondary" type="submit" id="AddTodo">Button</button>
+</form>
+{% endblock todo_form %}

@@ -1,0 +1,25 @@
+<li class="list-group-item w-100" id="todo-{{todo.id}}">
+  <div class="d-flex justify-content-between">
+    <span id="title-{{todo.id}}">{{todo.title}}</span>
+    <div class="d-flex gap-2">
+      <button
+        type="button"
+        class="btn btn-success"
+        hx-put="/api/v1/todos/{{todo.id}}/toggle"
+        hx-target="#title-{{todo.id}}"
+      >
+        Complete
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        hx-delete="/api/v1/todos/{{todo.id}}"
+        hx-target="#todo-{{todo.id}}"
+        hx-confirm="Are you sure want to delete '{{todo.title}}'?"
+        hx-swap="delete"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</li>
